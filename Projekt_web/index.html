@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"> <!-- Zeichencodierung auf UTF-8 setzen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Seite für mobile Geräte optimieren -->
+    <title>Puzzle Spiel</title> <!-- Seitentitel -->
+    <link rel="stylesheet" href="style.css"> <!-- Verlinkung zur externen CSS-Datei -->
+</head>
+<body>
+    <h1>Puzzle Spiel</h1> <!-- Hauptüberschrift der Seite -->
+    <h1 id="puzzle-start-message">Wähle ein Bild aus, um das Puzzle zu starten!</h1> <!-- Aufforderung zum Start des Puzzles -->
+    <!-- Div-Container für die verschiedenen auswählbaren Bilder -->
+    <div id="image1"></div>
+    <div id="image2"></div>
+    <div id="image3"></div>
+    <div id="image4"></div>
+
+    <div id="message-container"></div> <!-- Container für die Erfolgsmeldung nach dem Lösen des Puzzles -->
+    <button id="play-again-btn" onclick="resetGame()">Nochmal spielen</button> <!-- Button, um das Spiel nach Abschluss erneut zu spielen -->
+    <div id="puzzle-container"></div> <!-- Container für die Puzzlestücke, die der Nutzer anordnen soll -->
+    <div id="drop-zone"></div> <!-- Bereich, in den die Puzzlestücke gezogen und abgelegt werden -->
+
+    <script src="script.js"></script> <!-- Verlinkung zur externen JavaScript-Datei -->
+</body>
+</html>

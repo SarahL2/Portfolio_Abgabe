@@ -1,0 +1,268 @@
+body {
+    font-family: Arial, sans-serif; /* Schriftart */
+    display: flex; /* Flexbox-Layout verwenden */
+    flex-direction: column; /* Elemente vertikal anordnen */
+    align-items: center; /* Zentrieren der Elemente */
+    margin: 0; /* Kein äußerer Rand */
+    padding: 0; /* Kein innerer Rand */
+    height: 100vh; /* Höhe des Viewports einnehmen */
+    background-color: #91bae0; /* Hintergrundfarbe */
+}
+
+h1 {
+margin-top: 20px; /* Abstand nach oben */
+font-size: 2vw; /* Schriftgröße abhängig von der Ansichtsbreite */
+}
+
+
+#image1 {
+    margin-top: 20px; /* Abstand nach oben */
+    cursor: pointer; /* Mauszeiger wird zur Hand beim Überfahren */
+    width: 11vw; /* Breite in Bezug auf die Ansichtsbreite */
+    height: 11vw; /* Höhe in Bezug auf die Ansichtsbreite */
+    background-size: cover; /* Hintergrundbild proportional skalieren */
+    background-repeat: no-repeat; /* Kein Wiederholen des Hintergrundbildes */
+    border: 2px solid #aaa;  /* Grauer Rahmen */
+    background-image: url('https://cdn.pixabay.com/photo/2024/04/09/22/28/trees-8686902_1280.jpg'); /* Hintergrundbild */
+    position: absolute;  /* Absolute Positionierung */
+    top: 25%; /* 25% vom oberen Rand */
+    left: 35%; /* 35% vom linken Rand */
+    z-index: 1; /* Überlagern anderer Elemente */
+}
+
+#image2{
+    margin-top: 20px; /* Abstand nach oben */
+    cursor: pointer; /* Mauszeiger wird zur Hand beim Überfahren */
+    width: 11vw; /* Breite in Bezug auf die Ansichtsbreite */
+    height: 11vw; /* Höhe in Bezug auf die Ansichtsbreite */
+    background-size: cover; /* Hintergrundbild proportional skalieren */
+    background-repeat: no-repeat; /* Kein Wiederholen des Hintergrundbildes */
+    border: 2px solid #aaa; /* Grauer Rahmen */
+    background-image: url('https://cdn.pixabay.com/photo/2024/02/20/13/21/mountains-8585535_1280.jpg'); /* Hintergrundbild */
+    position: absolute; /* Absolute Positionierung */
+    top: 25%; /* 25% vom oberen Rand */
+    left: 55%; /* 55% vom linken Rand */
+    z-index: 1; /* Überlagern anderer Elemente */
+}
+
+#image3{
+    margin-top: 20px; /* Abstand nach oben */
+    cursor: pointer; /* Mauszeiger wird zur Hand beim Überfahren */
+    width: 11vw; /* Breite in Bezug auf die Ansichtsbreite */
+    height: 11vw; /* Höhe in Bezug auf die Ansichtsbreite */
+    background-size: cover; /* Hintergrundbild proportional skalieren */
+    background-repeat: no-repeat; /* Kein Wiederholen des Hintergrundbildes */
+    border: 2px solid #aaa; /* Grauer Rahmen */
+    background-image: url('https://cdn.pixabay.com/photo/2024/03/15/17/50/dogs-8635461_1280.jpg'); /* Hintergrundbild */
+    position: absolute; /* Absolute Positionierung */
+    top: 55%; /* 55% vom oberen Rand */
+    left: 35%; /* 35% vom linken Rand */
+    z-index: 1; /* Überlagern anderer Elemente */
+}
+
+#image4{
+    margin-top: 20px; /* Abstand nach oben */
+    cursor: pointer; /* Mauszeiger wird zur Hand beim Überfahren */
+    width: 11vw; /* Breite in Bezug auf die Ansichtsbreite */
+    height: 11vw; /* Höhe in Bezug auf die Ansichtsbreite */
+    background-size: cover; /* Hintergrundbild proportional skalieren */
+    background-repeat: no-repeat; /* Kein Wiederholen des Hintergrundbildes */
+    border: 2px solid #aaa; /* Grauer Rahmen */
+    background-image: url('https://cdn.pixabay.com/photo/2024/03/19/19/08/book-8643905_1280.jpg'); /* Hintergrundbild */
+    position: absolute; /* Absolute Positionierung */
+    top: 55%; /* 55% vom oberen Rand */
+    left: 55%; /* 55% vom linken Rand */
+    z-index: 1; /* Überlagern anderer Elemente */
+}
+
+#puzzle-container {
+display: grid; /* Grid-Layout verwenden */
+grid-template-columns: repeat(5, 60px); /* 5 Spalten mit je 60px */
+grid-template-rows: repeat(5, 60px); /* 5 Reihen mit je 60px */
+gap: 5px; /* Abstand zwischen den Zellen */
+margin-top: 20px; /* Abstand nach oben */
+position: relative; /* Relative Positionierung */
+z-index: 0; /* Unter den Auswahlbildern */
+}
+
+.puzzle-piece {
+width: 60px;
+height: 60px;
+background-size: cover; /* Hintergrundbild proportional skalieren */
+cursor: grab; /* Zeiger wird zur Hand bei Drag */
+}
+
+#drop-zone {
+display: grid;
+grid-template-columns: repeat(5, 60px);
+grid-template-rows: repeat(5, 60px);
+gap: 5px;
+margin-top: 20px;
+}
+
+.drop-area {
+width: 60px;
+height: 60px;
+border: 2px dashed #746c6c; /* Gestrichelter Rand */
+display: flex;
+align-items: center; /* Inhalt zentrieren (vertikal) */
+justify-content: center; /* Inhalt zentrieren (horizontal) */
+}
+
+#play-again-btn {
+    display: none; /* Button soll erst nach Puzzle-Lösung erscheinen */
+    background-color: #4CAF50; /* Grüne Hintergrundfarbe */
+    color: white; /* Weißer Text */
+    padding: 15px 30px; /* Innenabstand (Padding) für größeren Klickbereich */
+    font-size: 18px; /* Schriftgröße */
+    border: none; /* Kein Rand */
+    border-radius: 5px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger soll sich zu Hand ändern */
+    transition: background-color 0.3s ease; /* Weicher Übergang bei Hover */
+    margin-top: 20px; /* Abstand nach oben */
+}
+
+#play-again-btn:hover {
+    background-color: #45a049; /* Dunklere grüne Farbe beim Hover */
+}
+
+@media (max-width: 600px) {
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-color: #91bae0;
+    }
+    
+    h1 {
+        margin-top: 20px;
+        font-size: 24px; /* Festgelegte Schriftgröße für kleine Bildschirme */
+        align-items: center;
+    }
+
+    #puzzle-start-message {
+        font-size: 24px; 
+        padding: 0 30px;  /* 0px oben und unten, 30px rechts und links */
+        align-items: center;
+    }
+    
+    #image1 {
+        margin-top: 20px;
+        cursor: pointer;
+        width: 35vw; /* Angpasste Breite für mobile Geräte*/
+        height: 35vw; /* Angpasste Höhe für mobile Geräte*/
+        background-size: cover;
+        background-repeat: no-repeat; 
+        border: 2px solid #aaa;
+        background-image: url('https://cdn.pixabay.com/photo/2024/04/09/22/28/trees-8686902_1280.jpg'); 
+        position: absolute; 
+        top: 20%; 
+        z-index: 1; 
+        align-items: center;
+    }
+    
+    #image2{
+        margin-top: 150px;
+        cursor: pointer;
+        width: 35vw; /* Angpasste Breite für mobile Geräte*/
+        height: 35vw; /* Angpasste Höhe für mobile Geräte*/
+        background-size: cover;
+        background-repeat: no-repeat; /* Verhindert das Wiederholen des Hintergrundbildes */
+        border: 2px solid #aaa;
+        background-image: url('https://cdn.pixabay.com/photo/2024/02/20/13/21/mountains-8585535_1280.jpg');
+        position: absolute; /* Positionierung */
+        left: 35%;
+        z-index: 1; /* Sicherstellen, dass es oben ist */
+        align-items: center;
+    }
+    
+    #image3{
+        margin-top: 60px;
+        cursor: pointer;
+        width: 35vw; /* Angpasste Breite für mobile Geräte*/
+        height: 35vw; /* Angpasste Höhe für mobile Geräte*/
+        background-size: cover;
+        background-repeat: no-repeat; /* Verhindert das Wiederholen des Hintergrundbildes */
+        border: 2px solid #aaa;
+        background-image: url('https://cdn.pixabay.com/photo/2024/03/15/17/50/dogs-8635461_1280.jpg');
+        position: absolute; /* Positionierung */
+        z-index: 1; /* Sicherstellen, dass es oben ist */
+    }
+    
+    #image4{
+        margin-top: 240px;
+        cursor: pointer;
+        width: 35vw; /* Angpasste Breite für mobile Geräte*/
+        height: 35vw; /* Angpasste Höhe für mobile Geräte*/
+        background-size: cover;
+        background-repeat: no-repeat; /* Verhindert das Wiederholen des Hintergrundbildes */
+        border: 2px solid #aaa;
+        background-image: url('https://cdn.pixabay.com/photo/2024/03/19/19/08/book-8643905_1280.jpg');
+        position: absolute; /* Positionierung */
+        left: 35%;
+        z-index: 1; /* Sicherstellen, dass es oben ist */
+    }
+    
+    
+    #puzzle-container {
+        display: grid;
+        grid-template-columns: repeat(5, 60px); /* Feste Spaltenanzahl */
+        grid-template-rows: repeat(5, 60px);
+        gap: 5px;
+        margin-top: 20px;
+        position: relative; 
+        z-index: 0; 
+    }
+    
+    .puzzle-piece {
+        width: 60px;
+        height: 60px;
+        position: relative; /* Wichtig für die Verschiebung */
+        touch-action: none;  /* Verhindert Scrollen bei Touch */
+        background-size: cover; 
+    }
+    
+    #drop-zone {
+        display: grid;
+        grid-template-columns: repeat(5, 60px); /* Feste Spaltenanzahl für mobile Geräte */
+        grid-template-rows: repeat(5, 60px);
+        gap: 5px;
+        margin-top: 20px;
+    }
+    
+    .drop-area {
+        width: 60px;
+        height: 60px;
+        border: 2px dashed #746c6c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .puzzle-piece, .drop-area {
+        touch-action: none;
+    }
+    
+    #play-again-btn {
+        display: none; /* Button soll erst nach Puzzle-Lösung erscheinen */
+        background-color: #4CAF50; /* Grüne Hintergrundfarbe */
+        color: white; /* Weißer Text */
+        padding: 15px 30px; /* Innenabstand (Padding) für größeren Klickbereich */
+        font-size: 18px; /* Feste Schriftgröße für mobile Geräte */
+        border: none; /* Kein Rand */
+        border-radius: 5px; /* Abgerundete Ecken */
+        cursor: pointer; /* Zeiger soll sich zu Hand ändern */
+        transition: background-color 0.3s ease; /* Weicher Übergang bei Hover */
+        margin-top: 20px; /* Abstand nach oben */
+    }
+    
+    #play-again-btn:hover {
+        background-color: #45a049; /* Dunklere grüne Farbe beim Hover */
+    }
+    
+}
