@@ -63,7 +63,7 @@ class Playlist:
 
 # Hauptklasse der Musik-App
 class MusicApp:
-    def __init__(self, data_file='\\songs_10000'): # Bitte hier den Dateipfad zur csv angeben
+    def __init__(self, data_file='songs_10000'): # Bitte hier den Dateipfad zur csv angeben wenn diese nicht im selben Ordner ist 
         self.data_file = data_file  # Dateipfad zur Datendatei
         self.playlists = []          # Liste der Playlists
         self.songs = []              # Liste der Songs
